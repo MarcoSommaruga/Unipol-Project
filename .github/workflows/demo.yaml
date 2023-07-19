@@ -19,10 +19,12 @@ jobs:
 
   Test:
     runs-on: ubuntu-latest
+    needs: Build
     steps:
       - run: echo "Questo è il job di test"
 
   Deploy:
     runs-on: ubuntu-latest
+    needs: Test
     steps:
       - run: echo "Questo è il job di deploy"
